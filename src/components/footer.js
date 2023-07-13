@@ -1,5 +1,9 @@
 import React from 'react';
 import './Footer.css'; // Import the CSS file for styling
+import FacebookIcon from '@mui/icons-material/Facebook';
+import TwitterIcon from '@mui/icons-material/Twitter';
+import InstagramIcon from '@mui/icons-material/Instagram';
+// import PinterestIcon from '@mui/icons-material/Pinterest';
 
 const Footer = () => {
     return (
@@ -20,18 +24,18 @@ const Footer = () => {
                 </div>
                 <div className="footer-section">
                     <h4>Follow Us</h4>
-                    {/* <div className="social-icons">
-                        <a href="#"><i className="fab fa-facebook-f"></i></a>
-                        <a href="#"><i className="fab fa-twitter"></i></a>
-                        <a href="#"><i className="fab fa-instagram"></i></a>
-                        <a href="#"><i className="fab fa-pinterest"></i></a>
-                    </div> */}
+                    <div className="social-icons">
+                        <a href="/"><FacebookIcon /></a>
+                        <a href="/"><TwitterIcon /></a>
+                        <a href="/"><InstagramIcon /></a>
+                        {/* <a href="/"><PinterestIcon /></a> */}
+                    </div>
                 </div>
             </div>
             <div className="footer-bottom">
                 <p>&copy; 2023 My eCommerce Store. All rights reserved.</p>
             </div>
-        </footer>
+        </footer >
     );
 };
 

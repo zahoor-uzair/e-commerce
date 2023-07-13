@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import './nav.css'
-export const Navigation = ({ isLoggedIn, logIn, logOut }) => {
+import { useContext } from 'react';
+import { AuthContext } from '../auth/authprovider';
+export const Navigation = () => {
+    const authContext = useContext(AuthContext);
+    const { isLoggedIn, login, logout } = authContext;
+
     return (
         <nav className="navigation">
             <ul className="navigation__list">
@@ -20,9 +25,9 @@ export const Navigation = ({ isLoggedIn, logIn, logOut }) => {
 
             </ul>
             {isLoggedIn ? (
-                <button className='log' onClick={logOut}>Logout</button>
+                <button className='log' onClick={logout}>Logout</button>
             ) : (
-                <button className='log' onClick={logIn}>Login</button>
+                <button className='log' onClick={login}>Login</button>
             )}
         </nav>
     );

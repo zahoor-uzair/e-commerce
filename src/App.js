@@ -6,18 +6,15 @@ import Dashboard from './container/dashboard';
 import AboutPage from './container/about';
 import Footer from './components/footer';
 import Protected from './auth/protected';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { AuthContext } from './auth/authprovider';
 function App() {
-  const [isLoggedIn, setisLoggedIn] = useState(null);
-  const logIn = () => {
-    setisLoggedIn(true);
-  };
-  const logOut = () => {
-    setisLoggedIn(false);
-  };
+  const authContext = useContext(AuthContext);
+  const { isLoggedIn } = authContext;
+
   return (
     <div>
-      <Navigation isLoggedIn={isLoggedIn} logIn={logIn} logOut={logOut} />
+      <Navigation />
       <Routes >
         <Route path='/' Component={Home} />
         <Route path='/about' Component={AboutPage} />
