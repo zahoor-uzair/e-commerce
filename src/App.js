@@ -1,23 +1,40 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { Route, Routes } from 'react-router-dom';
+import { Home } from './container/home';
+import { Navigation } from './components/nav';
+import Dashboard from './container/dashboard';
+import AboutPage from './container/about';
+import Footer from './components/footer';
+import Protected from './auth/protected';
+import { useState } from 'react';
 function App() {
+  const [isLoggedIn, setisLoggedIn] = useState(null);
+  const logIn = () => {
+    setisLoggedIn(true);
+  };
+  const logOut = () => {
+    setisLoggedIn(false);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation isLoggedIn={isLoggedIn} logIn={logIn} logOut={logOut} />
+      <Routes >
+        <Route path='/' Component={Home} />
+        <Route path='/about' Component={AboutPage} />
+        {/* <Route path='/dashboard' Component={Dashboard} /> */}
+        <Route path='/dashboard'
+          element={
+            <Protected isLoggedIn={isLoggedIn}>
+              <Dashboard />
+            </Protected>
+          }
+        />
+
+      </Routes>
+      <Footer />
+
+
+
     </div>
   );
 }
