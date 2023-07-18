@@ -145,7 +145,8 @@ export const productsData = [
 ];
 export const handleFilter = (e, setFilter, productsData) => {
     const filteredProducts = productsData.filter((product) =>
-        product.name.toLowerCase().includes(e.target.value.toLowerCase())
+        product.name.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        product.category.toLowerCase().includes(e.target.value.toLowerCase())
     );
     setFilter(filteredProducts);
 };
@@ -161,3 +162,9 @@ export const filterheadphone = (setFilter) => {
     );
     setFilter(filteredProducts);
 };
+export const filterBelow30 = (setFilter) => {
+    const filteredProducts = productsData.filter((product) =>
+        product.price <= "20"
+    );
+    setFilter(filteredProducts);
+}

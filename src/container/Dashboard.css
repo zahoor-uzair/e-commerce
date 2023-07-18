@@ -1,11 +1,23 @@
 .dashboard {
   max-width: 100%;
   margin: 0 auto;
-  padding: 15px;
+  padding: 0px 15px;
+  position: relative;
 }
-
-.dashboard h2 {
-  margin-bottom: 10px;
+.dash-header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(172, 148, 77, 0.2);
+  padding: 10px;
+  border-radius: 5px;
+}
+.dash-header button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+}
+.dash-header button:hover {
+  background-color: rgb(59, 59, 59);
 }
 
 .dashboard-table {
@@ -16,15 +28,15 @@
 
 .dashboard-table th,
 .dashboard-table td {
-  padding: 4px;
-  text-align: left;
+  padding: 2px;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
 .dashboard-table th {
   background-color: #1d1c1c;
   color: white;
-  padding: 15px;
+  padding: 12px;
 }
 
 .dashboard-table tbody tr:hover {
