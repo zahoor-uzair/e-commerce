@@ -1,15 +1,46 @@
+.charts {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.line-chart {
+  background-image: linear-gradient(
+    /* to right, */ rgb(116, 115, 115),
+    rgb(161, 161, 72)
+  );
+  width: fit-content;
+  height: fit-content;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgb(68, 68, 68);
+}
 .dashboard {
   max-width: 100%;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 0px 15px;
+  /* display: flex; */
   position: relative;
 }
+yellow
+/* .product-table {
+  width: 49%;
+  margin-left: 1%;
+  height: 450px;
+  overflow: auto;
+  border: 1px solid gray;
+  border-radius: 4px;
+  box-shadow: 2px 2px 6px gray;
+} */
+.product-table h2 {
+  margin: 10px;
+}
 .dash-header {
-  position: sticky;
-  top: 0;
-  background-color: rgba(172, 148, 77, 0.2);
+  height: 50px;
+  width: 100%;
   padding: 10px;
-  border-radius: 5px;
 }
 .dash-header button {
   background-color: black;
@@ -25,7 +56,10 @@
   border-collapse: collapse;
   margin-bottom: 10px;
 }
-
+.dashboard-table th {
+  position: sticky;
+  top: 0;
+}
 .dashboard-table th,
 .dashboard-table td {
   padding: 2px;
@@ -41,4 +75,15 @@
 
 .dashboard-table tbody tr:hover {
   background-color: #e5e7c6;
+}
+@media screen and (width< 1000px) {
+  .product-table {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Addproduct.css';
-import { productsData } from './utils';
+import { productsData } from '../utils';
 
 const AddProduct = ({ closeModal }) => {
     const [formData, setFormData] = useState({
